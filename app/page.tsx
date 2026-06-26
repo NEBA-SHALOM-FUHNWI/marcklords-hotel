@@ -1,29 +1,28 @@
-import { Navbar } from "@/components/layout/Navbar";
-import { TopBar } from "@/components/layout/TopBar";
-import { PageHeader } from "@/components/shared/PageHeader";
-import { Container } from "@/components/shared/Container";
-import { SectionTitle } from "@/components/shared/SectionTitle";
+import { MainLayout } from "@/components/layout/MainLayout";
+import { Hero } from "@/components/home/Hero/Hero";
+import { BookingWidget } from "@/components/home/Booking/BookingWidget";
+import { AboutPreview } from "@/components/home/About/AboutPreview";
+import { FeaturedRooms } from "@/components/home/Rooms/FeaturedRooms";
+import { RestaurantPreview } from "@/components/home/Restaurant/RestaurantPreview";
+import { ConferencePreview } from "@/components/home/Conference/ConferencePreview";
+import {WhyChooseUs} from "@/components/home/Features/WhyChooseUs";
+import { Testimonials } from "@/components/home/Testimonials/Testimonials";
+import { GalleryPreview } from "@/components/home/Gallery/GalleryPreview";
+import { CallToAction } from "@/components/home/CTA/CallToAction";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#F8F7F3]">
-      <TopBar />
-      <Navbar />
-
-      <PageHeader
-        label="Project Atlas"
-        title="Welcome to Marcklords Hotel"
-        subtitle="A modern hospitality experience built with comfort, professionalism, and digital convenience in mind."
-      />
-
-      <section className="py-20">
-        <Container>
-          <SectionTitle
-            title="Navbar Component"
-            subtitle="The main hotel navigation is now reusable and ready for all public pages."
-          />
-        </Container>
-      </section>
-    </main>
+    <MainLayout>
+      <Hero />
+      <BookingWidget />
+      <AboutPreview />
+      <FeaturedRooms />
+      <RestaurantPreview />
+      <ConferencePreview />
+      <WhyChooseUs />
+      <Testimonials />
+      <GalleryPreview />
+      <CallToAction />
+    </MainLayout>
   );
 }
