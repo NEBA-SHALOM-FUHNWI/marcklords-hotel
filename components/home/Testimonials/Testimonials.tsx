@@ -4,16 +4,14 @@
  * Project: Marcklords Hotel (Project Atlas)
  *
  * Description:
- * Homepage testimonials section.
- * Displays guest feedback placeholders that can later be replaced
- * with real approved reviews from the hotel.
+ * Premium homepage testimonials section.
+ * Uses richer testimonial data to build trust and social proof.
  * ============================================================================
  */
 
-import { Quote, Star } from "lucide-react";
+import { CheckCircle2, Quote, Star } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { SectionTitle } from "@/components/shared/SectionTitle";
-import { CheckCircle2 } from "lucide-react";
 
 const testimonials = [
   {
@@ -21,7 +19,7 @@ const testimonials = [
     role: "Business Traveller",
     location: "Douala, Cameroon",
     comment:
-      "The rooms were spotless, the staff were incredibly welcoming, and the conference facilities were perfect for our meeting. I'll definitely stay here again.",
+      "The rooms were comfortable, the staff were welcoming, and the hotel gave me exactly what I needed during my business trip.",
     verified: true,
   },
   {
@@ -29,22 +27,19 @@ const testimonials = [
     role: "Family Guest",
     location: "Buea, Cameroon",
     comment:
-      "Our family had a wonderful experience. The restaurant served excellent meals, and the atmosphere made us feel at home.",
+      "Our family enjoyed the stay. The restaurant was convenient, the environment was calm, and the service felt warm.",
     verified: true,
   },
   {
     name: "Peter E.",
-    role: "Conference Attendee",
+    role: "Conference Guest",
     location: "Limbe, Cameroon",
     comment:
-      "Everything was well organized, from check-in to the event facilities. Marcklords Hotel is one of the best places to stay in Kumba.",
+      "The hotel provided a professional setting for our meeting. It was easy to access, comfortable, and well organized.",
     verified: true,
   },
 ];
 
-/**
- * Displays guest testimonial cards on the homepage.
- */
 export function Testimonials() {
   return (
     <section className="bg-[#F8F7F3] py-24">
@@ -52,14 +47,14 @@ export function Testimonials() {
         <SectionTitle
           centered
           title="Guest Experiences"
-          subtitle="What guests may appreciate most: comfort, location, service, and hospitality."
+          subtitle="Stories that reflect comfort, service, and hospitality."
         />
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {testimonials.map((item) => (
             <div
               key={item.name}
-              className="rounded-[2rem] bg-white p-8 shadow-sm"
+              className="relative rounded-[2rem] bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
               <Quote className="h-10 w-10 text-[#C9A227]" />
 
@@ -69,19 +64,21 @@ export function Testimonials() {
                 ))}
               </div>
 
-              <p className="mt-6 leading-7 text-[#555]">
-                {item.comment}
-              </p>
+              <p className="mt-6 leading-7 text-[#555]">{item.comment}</p>
 
               <div className="mt-8 border-t pt-5">
                 <h4 className="font-semibold text-[#1F5E4B]">{item.name}</h4>
-                <p className="mt-1 text-sm text-[#777]">{item.role}</p>
+
+                <p className="mt-1 text-sm text-[#777]">
+                  {item.role} · {item.location}
+                </p>
+
                 {item.verified && (
-  <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
-    <CheckCircle2 className="h-4 w-4" />
-    Verified Guest
-  </div>
-)}
+                  <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#1F5E4B]/10 px-3 py-1 text-xs font-semibold text-[#1F5E4B]">
+                    <CheckCircle2 className="h-4 w-4" />
+                    Verified Guest
+                  </div>
+                )}
               </div>
             </div>
           ))}

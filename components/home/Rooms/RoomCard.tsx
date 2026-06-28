@@ -15,8 +15,9 @@ import { BedDouble, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type RoomCardProps = {
+  slug: string;
   name: string;
-  description: string;
+  shortDescription: string;
   price: string;
   guests: string;
   image: string;
@@ -24,10 +25,11 @@ type RoomCardProps = {
 
 export function RoomCard({
   name,
-  description,
+  shortDescription,
   price,
   guests,
   image,
+  slug,
 }: RoomCardProps) {
   return (
     <div className="group overflow-hidden rounded-[2rem] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
@@ -45,7 +47,7 @@ export function RoomCard({
           {name}
         </h3>
 
-        <p className="mt-3 text-sm leading-7 text-[#555]">{description}</p>
+        <p className="mt-3 text-sm leading-7 text-[#555]">{shortDescription}</p>
 
         <div className="mt-5 flex items-center justify-between text-sm text-[#333333]">
           <span className="flex items-center gap-2">
@@ -59,7 +61,7 @@ export function RoomCard({
           </span>
         </div>
 
-        <Link href="/rooms">
+        <Link href={`/rooms/${slug}`}>
           <Button className="mt-6 w-full rounded-full bg-[#1F5E4B] hover:bg-[#063D2E]">
             View Room
           </Button>
