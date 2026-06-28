@@ -13,6 +13,7 @@ import { BriefcaseBusiness, CalendarCheck, UsersRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { SectionTitle } from "@/components/shared/SectionTitle";
+import Image from "next/image";
 
 /**
  * Displays conference and events preview content on the homepage.
@@ -78,7 +79,14 @@ export function ConferencePreview() {
           </div>
 
           <div className="rounded-[2rem] bg-white p-6 text-[#333333] shadow-xl">
-            <div className="h-80 rounded-[1.5rem] bg-[#F8F7F3]" />
+            <div className="relative h-80 overflow-hidden rounded-[1.5rem]">
+  <Image
+    src="/images/conference/conference-hall.jpg"
+    alt="Marcklords Hotel conference hall"
+    fill
+    className="object-cover"
+  />
+</div>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div className="rounded-2xl bg-[#F8F7F3] p-5">

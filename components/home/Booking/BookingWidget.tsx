@@ -4,64 +4,41 @@
  * Project: Marcklords Hotel (Project Atlas)
  *
  * Description:
- * Homepage booking request widget.
- * Allows visitors to quickly begin a booking request from the homepage.
+ * Premium homepage booking request widget.
+ * Gives visitors a clear first step toward checking availability.
  * ============================================================================
  */
 
 import Link from "next/link";
-import { CalendarDays, Users, BedDouble } from "lucide-react";
+import { BedDouble, CalendarDays, Search, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BookingField } from "./BookingField";
 
-/**
- * Displays a simple booking form preview on the homepage.
- */
 export function BookingWidget() {
   return (
-    <div className="relative z-20 -mt-12">
-      <div className="mx-auto grid max-w-6xl gap-4 rounded-3xl bg-white p-6 shadow-xl md:grid-cols-4">
-        <div>
-          <label className="text-sm font-semibold text-[#1F5E4B]">
-            Check-in
-          </label>
-          <div className="mt-2 flex items-center gap-3 rounded-2xl border p-4 text-[#333333]">
-            <CalendarDays className="h-5 w-5 text-[#C9A227]" />
-            <span>Select date</span>
-          </div>
-        </div>
+    <div className= "w-full">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/40 bg-white/95 p-5 shadow-2xl backdrop-blur md:p-6">
+        <div className="grid gap-4 lg:grid-cols-[1fr_1fr_1fr_1fr_auto]">
+          <BookingField
+            icon={CalendarDays}
+            label="Check In"
+            value="Select arrival"
+          />
 
-        <div>
-          <label className="text-sm font-semibold text-[#1F5E4B]">
-            Check-out
-          </label>
-          <div className="mt-2 flex items-center gap-3 rounded-2xl border p-4 text-[#333333]">
-            <CalendarDays className="h-5 w-5 text-[#C9A227]" />
-            <span>Select date</span>
-          </div>
-        </div>
+          <BookingField
+            icon={CalendarDays}
+            label="Check Out"
+            value="Select departure"
+          />
 
-        <div>
-          <label className="text-sm font-semibold text-[#1F5E4B]">
-            Guests
-          </label>
-          <div className="mt-2 flex items-center gap-3 rounded-2xl border p-4 text-[#333333]">
-            <Users className="h-5 w-5 text-[#C9A227]" />
-            <span>2 guests</span>
-          </div>
-        </div>
+          <BookingField icon={Users} label="Guests" value="2 guests" />
 
-        <div>
-          <label className="text-sm font-semibold text-[#1F5E4B]">
-            Room
-          </label>
-          <div className="mt-2 flex items-center gap-3 rounded-2xl border p-4 text-[#333333]">
-            <BedDouble className="h-5 w-5 text-[#C9A227]" />
-            <span>Any room</span>
-          </div>
+          <BookingField icon={BedDouble} label="Room Type" value="Any room" />
 
-          <Link href="/book">
-            <Button className="mt-4 h-12 w-full rounded-2xl bg-[#1F5E4B] hover:bg-[#063D2E]">
-              Request Booking
+          <Link href="/book" className="lg:min-w-[210px]">
+            <Button className="h-full min-h-[88px] w-full rounded-2xl bg-[#1F5E4B] text-base font-semibold hover:bg-[#063D2E]">
+              <Search className="mr-2 h-5 w-5" />
+              Search
             </Button>
           </Link>
         </div>

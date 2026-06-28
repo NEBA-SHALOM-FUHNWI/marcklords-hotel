@@ -13,6 +13,7 @@ import { Coffee, Utensils, Wine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { SectionTitle } from "@/components/shared/SectionTitle";
+import Image from "next/image";
 
 /**
  * Displays a short restaurant preview on the homepage.
@@ -41,7 +42,14 @@ export function RestaurantPreview() {
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="rounded-[2rem] bg-[#063D2E] p-8 text-white">
-            <div className="h-72 rounded-[1.5rem] bg-white/10" />
+            <div className="relative h-72 overflow-hidden rounded-[1.5rem]">
+  <Image
+    src="/images/restaurant/restaurant-main.jpg"
+    alt="Marcklords Hotel restaurant"
+    fill
+    className="object-cover"
+  />
+</div>
 
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.3em] text-[#C9A227]">
               Dining Experience

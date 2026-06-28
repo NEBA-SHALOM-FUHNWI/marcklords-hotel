@@ -14,6 +14,7 @@ import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { SectionTitle } from "@/components/shared/SectionTitle";
+import Image from "next/image";
 
 /**
  * Displays a short introduction to Marcklords Hotel on the homepage.
@@ -52,22 +53,25 @@ export function AboutPreview() {
             </Link>
           </div>
 
-          <div className="rounded-[2rem] bg-white p-6 shadow-sm">
-            <div className="rounded-[1.5rem] bg-[#063D2E] p-10 text-white">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#C9A227]">
-                Hospitality Promise
-              </p>
+          <div className="grid gap-5">
+  <div className="relative h-80 overflow-hidden rounded-[2rem] shadow-xl">
+    <Image
+      src="/images/about/hotel-exterior.jpg"
+      alt="Marcklords Hotel exterior"
+      fill
+      className="object-cover"
+    />
+  </div>
 
-              <h3 className="mt-4 font-heading text-4xl font-bold">
-                Your Comfort, Our Commitment.
-              </h3>
-
-              <p className="mt-5 leading-8 text-white/75">
-                Our digital experience is designed to help guests discover the
-                hotel, explore services, and request bookings with confidence.
-              </p>
-            </div>
-          </div>
+  <div className="relative -mt-20 ml-auto h-56 w-4/5 overflow-hidden rounded-[2rem] border-8 border-[#F8F7F3] shadow-xl">
+    <Image
+      src="/images/about/reception.jpg"
+      alt="Marcklords Hotel reception"
+      fill
+      className="object-cover"
+    />
+  </div>
+</div>
         </div>
       </Container>
     </section>

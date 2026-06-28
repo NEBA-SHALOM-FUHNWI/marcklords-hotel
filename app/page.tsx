@@ -1,6 +1,5 @@
 import { MainLayout } from "@/components/layout/MainLayout";
 import { Hero } from "@/components/home/Hero/Hero";
-import { BookingWidget } from "@/components/home/Booking/BookingWidget";
 import { AboutPreview } from "@/components/home/About/AboutPreview";
 import { FeaturedRooms } from "@/components/home/Rooms/FeaturedRooms";
 import { RestaurantPreview } from "@/components/home/Restaurant/RestaurantPreview";
@@ -10,11 +9,11 @@ import { Testimonials } from "@/components/home/Testimonials/Testimonials";
 import { GalleryPreview } from "@/components/home/Gallery/GalleryPreview";
 import { CallToAction } from "@/components/home/CTA/CallToAction";
 
+
 export default function Home() {
   return (
     <MainLayout>
       <Hero />
-      <BookingWidget />
       <AboutPreview />
       <FeaturedRooms />
       <RestaurantPreview />

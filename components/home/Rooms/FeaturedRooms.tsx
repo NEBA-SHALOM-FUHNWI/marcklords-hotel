@@ -19,29 +19,32 @@ import { RoomCard } from "./RoomCard";
  * Displays featured accommodation options on the homepage.
  */
 export function FeaturedRooms() {
-  const rooms = [
-    {
-      name: "Standard Room",
-      description:
-        "A comfortable room designed for short stays, business visits, and guests who value simplicity and convenience.",
-      price: "From 35,000 FCFA",
-      guests: "Up to 2 guests",
-    },
-    {
-      name: "Deluxe Room",
-      description:
-        "A spacious option with added comfort, ideal for guests looking for a more relaxing stay in Kumba.",
-      price: "From 55,000 FCFA",
-      guests: "Up to 2 guests",
-    },
-    {
-      name: "Executive Suite",
-      description:
-        "A premium room experience designed for business travelers, couples, and guests who prefer extra space.",
-      price: "From 85,000 FCFA",
-      guests: "Up to 3 guests",
-    },
-  ];
+const rooms = [
+  {
+    name: "Standard Room",
+    description:
+      "A comfortable room designed for short stays, business visits, and guests who value simplicity and convenience.",
+    price: "From 35,000 FCFA",
+    guests: "Up to 2 guests",
+    image: "/images/rooms/standard-room.jpg",
+  },
+  {
+    name: "Deluxe Room",
+    description:
+      "A spacious option with added comfort, ideal for guests looking for a more relaxing stay in Kumba.",
+    price: "From 55,000 FCFA",
+    guests: "Up to 2 guests",
+    image: "/images/rooms/deluxe-room.jpg",
+  },
+  {
+    name: "Executive Suite",
+    description:
+      "A premium room experience designed for business travelers, couples, and guests who prefer extra space.",
+    price: "From 85,000 FCFA",
+    guests: "Up to 3 guests",
+    image: "/images/rooms/executive-suite.jpg",
+  },
+];
 
   return (
     <section className="bg-white py-24">

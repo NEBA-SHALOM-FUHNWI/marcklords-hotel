@@ -13,25 +13,32 @@
 import { Quote, Star } from "lucide-react";
 import { Container } from "@/components/shared/Container";
 import { SectionTitle } from "@/components/shared/SectionTitle";
+import { CheckCircle2 } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Business Guest",
-    role: "Frequent Traveler",
+    name: "John M.",
+    role: "Business Traveller",
+    location: "Douala, Cameroon",
     comment:
-      "A comfortable and convenient place to stay while visiting Kumba for work.",
+      "The rooms were spotless, the staff were incredibly welcoming, and the conference facilities were perfect for our meeting. I'll definitely stay here again.",
+    verified: true,
   },
   {
-    name: "Event Guest",
+    name: "Grace N.",
+    role: "Family Guest",
+    location: "Buea, Cameroon",
+    comment:
+      "Our family had a wonderful experience. The restaurant served excellent meals, and the atmosphere made us feel at home.",
+    verified: true,
+  },
+  {
+    name: "Peter E.",
     role: "Conference Attendee",
+    location: "Limbe, Cameroon",
     comment:
-      "The hotel provides a professional setting for meetings and organized events.",
-  },
-  {
-    name: "Family Visitor",
-    role: "Weekend Guest",
-    comment:
-      "A welcoming environment with helpful staff and easy access to the city.",
+      "Everything was well organized, from check-in to the event facilities. Marcklords Hotel is one of the best places to stay in Kumba.",
+    verified: true,
   },
 ];
 
@@ -69,6 +76,12 @@ export function Testimonials() {
               <div className="mt-8 border-t pt-5">
                 <h4 className="font-semibold text-[#1F5E4B]">{item.name}</h4>
                 <p className="mt-1 text-sm text-[#777]">{item.role}</p>
+                {item.verified && (
+  <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
+    <CheckCircle2 className="h-4 w-4" />
+    Verified Guest
+  </div>
+)}
               </div>
             </div>
           ))}

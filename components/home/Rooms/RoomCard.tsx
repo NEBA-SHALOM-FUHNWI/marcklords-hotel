@@ -9,6 +9,7 @@
  * ============================================================================
  */
 
+import Image from "next/image";
 import Link from "next/link";
 import { BedDouble, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,24 +19,33 @@ type RoomCardProps = {
   description: string;
   price: string;
   guests: string;
+  image: string;
 };
 
-/**
- * Displays a single room preview card.
- */
-export function RoomCard({ name, description, price, guests }: RoomCardProps) {
+export function RoomCard({
+  name,
+  description,
+  price,
+  guests,
+  image,
+}: RoomCardProps) {
   return (
-    <div className="overflow-hidden rounded-[2rem] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-      <div className="h-56 bg-[#063D2E]" />
+    <div className="group overflow-hidden rounded-[2rem] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+      <div className="relative h-64 overflow-hidden">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-cover transition duration-500 group-hover:scale-105"
+        />
+      </div>
 
       <div className="p-6">
         <h3 className="font-heading text-2xl font-bold text-[#1F5E4B]">
           {name}
         </h3>
 
-        <p className="mt-3 text-sm leading-7 text-[#555]">
-          {description}
-        </p>
+        <p className="mt-3 text-sm leading-7 text-[#555]">{description}</p>
 
         <div className="mt-5 flex items-center justify-between text-sm text-[#333333]">
           <span className="flex items-center gap-2">

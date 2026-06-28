@@ -4,60 +4,92 @@
  * Project: Marcklords Hotel (Project Atlas)
  *
  * Description:
- * Homepage gallery preview.
- * Displays a selection of placeholder images that will later be replaced
- * with actual hotel photographs.
+ * Premium homepage gallery preview using real hotel-style images.
  * ============================================================================
  */
 
+import Image from "next/image";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/shared/Container";
 import { SectionTitle } from "@/components/shared/SectionTitle";
 
 const galleryItems = [
-  "Reception",
-  "Executive Room",
-  "Restaurant",
-  "Conference Hall",
-  "Swimming Area",
-  "Hotel Exterior",
+  {
+    title: "Hotel Exterior",
+    image: "/images/about/hotel-exterior.jpg",
+    className: "lg:col-span-2",
+  },
+  {
+    title: "Reception",
+    image: "/images/about/reception.jpg",
+    className: "",
+  },
+  {
+    title: "Restaurant",
+    image: "/images/restaurant/restaurant-main.jpg",
+    className: "",
+  },
+  {
+    title: "Conference Hall",
+    image: "/images/conference/conference-hall.jpg",
+    className: "",
+  },
+  {
+    title: "Deluxe Room",
+    image: "/images/rooms/deluxe-room.jpg",
+    className: "lg:col-span-2",
+  },
 ];
 
-/**
- * Displays the homepage gallery preview.
- */
 export function GalleryPreview() {
   return (
     <section className="bg-white py-24">
       <Container>
-        <SectionTitle
-          centered
-          title="Discover Marcklords Hotel"
-          subtitle="Take a glimpse at our rooms, dining spaces, conference facilities, and welcoming environment."
-        />
+        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <SectionTitle
+            title="Discover Marcklords Hotel"
+            subtitle="Take a glimpse at our rooms, dining spaces, conference facilities, and welcoming environment."
+          />
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Link href="/gallery">
+            <Button
+              variant="outline"
+              className="rounded-full border-[#1F5E4B] px-8 text-[#1F5E4B] hover:bg-[#1F5E4B] hover:text-white"
+            >
+              View Gallery
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
+        </div>
+
+        <div className="mt-14 grid auto-rows-[280px] gap-6 lg:grid-cols-3">
           {galleryItems.map((item) => (
             <div
-              key={item}
-              className="group overflow-hidden rounded-[2rem] shadow-sm"
+              key={item.title}
+              className={`group relative overflow-hidden rounded-[2rem] shadow-sm ${item.className}`}
             >
-              <div className="flex h-72 items-end rounded-[2rem] bg-[#063D2E] p-6 transition duration-300 group-hover:scale-105">
-                <h3 className="font-heading text-2xl font-bold text-white">
-                  {item}
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover transition duration-700 group-hover:scale-110"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+              <div className="absolute bottom-6 left-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#C9A227]">
+                  Gallery
+                </p>
+                <h3 className="mt-2 font-heading text-3xl font-bold text-white">
+                  {item.title}
                 </h3>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Link href="/gallery">
-            <Button className="rounded-full bg-[#1F5E4B] px-8 hover:bg-[#063D2E]">
-              View Full Gallery
-            </Button>
-          </Link>
         </div>
       </Container>
     </section>
