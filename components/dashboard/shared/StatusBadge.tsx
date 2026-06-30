@@ -14,6 +14,7 @@ type StatusBadgeProps = {
 
 const statusStyles: Record<string, string> = {
   Available: "bg-green-100 text-green-700",
+  Unavailable: "bg-red-100 text-red-700",
   Occupied: "bg-red-100 text-red-700",
   Cleaning: "bg-yellow-100 text-yellow-700",
   Reserved: "bg-blue-100 text-blue-700",
@@ -27,6 +28,8 @@ const statusStyles: Record<string, string> = {
   "Checked Out": "bg-gray-100 text-gray-700",
   Cancelled: "bg-red-100 text-red-700",
   Inactive: "bg-gray-100 text-gray-700",
+  Preparing: "bg-yellow-100 text-yellow-700",
+  Completed: "bg-green-100 text-green-700",
 };
 
 export function StatusBadge({ status }: StatusBadgeProps) {

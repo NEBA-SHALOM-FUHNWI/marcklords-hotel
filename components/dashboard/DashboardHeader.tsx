@@ -12,6 +12,7 @@
 import { Bell, LogOut, Search } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { hotelConfig } from "@/config/hotel.config";
 
 export function DashboardHeader() {
   return (
@@ -22,7 +23,7 @@ export function DashboardHeader() {
             Hotel Management
           </p>
           <h1 className="font-heading text-2xl font-bold text-[#1F5E4B]">
-            Marcklords Dashboard
+            {hotelConfig.systemName}
           </h1>
         </div>
 

@@ -13,6 +13,7 @@ import Link from "next/link";
 import { Lock, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/hotel/Logo";
+import { hotelConfig } from "@/config/hotel.config";
 
 export function LoginForm() {
   return (
@@ -27,7 +28,7 @@ export function LoginForm() {
         </h1>
 
         <p className="mt-3 text-center text-sm text-[#555]">
-          Access the Marcklords Hotel management dashboard.
+          Access the {hotelConfig.name} management dashboard.
         </p>
 
         <form className="mt-8 space-y-5">
