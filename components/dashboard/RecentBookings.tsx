@@ -10,6 +10,9 @@
  */
 
 import { bookings } from "@/lib/mock-data/bookings";
+import { StatusBadge } from "@/components/dashboard/shared/StatusBadge";
+
+
 export function RecentBookings() {
   return (
     <div className="rounded-[2rem] bg-white p-6 shadow-sm">
@@ -44,9 +47,7 @@ export function RecentBookings() {
                 <td className="py-4 text-[#555]">{booking.room}</td>
                 <td className="py-4 text-[#555]">{booking.checkIn}</td>
                 <td className="py-4">
-                  <span className="rounded-full bg-[#1F5E4B]/10 px-3 py-1 text-xs font-semibold text-[#1F5E4B]">
-                    {booking.status}
-                  </span>
+                  <StatusBadge status={booking.status} />
                 </td>
               </tr>
             ))}

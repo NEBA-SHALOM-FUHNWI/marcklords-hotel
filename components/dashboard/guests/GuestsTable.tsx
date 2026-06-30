@@ -9,6 +9,7 @@
  */
 import Link from "next/link";
 import { guests } from "@/lib/mock-data/guests";
+import { StatusBadge } from "@/components/dashboard/shared/StatusBadge";
 
 export function GuestsTable() {
   return (
@@ -45,9 +46,7 @@ export function GuestsTable() {
                 <td className="py-4 text-[#555]">{guest.nationality}</td>
 
                 <td className="py-4">
-                  <span className="rounded-full bg-[#1F5E4B]/10 px-3 py-1 text-xs font-semibold text-[#1F5E4B]">
-                    {guest.status}
-                  </span>
+                  <StatusBadge status={guest.status} />
                 </td>
                 <td className="py-4">
   <Link

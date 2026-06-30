@@ -10,6 +10,7 @@
 
 import Link from "next/link";
 import { bookings } from "@/lib/mock-data/bookings";
+import { StatusBadge } from "@/components/dashboard/shared/StatusBadge";
 
 export function BookingsTable() {
   return (
@@ -43,9 +44,7 @@ export function BookingsTable() {
                 <td className="py-4 text-[#555]">{booking.checkIn}</td>
                 <td className="py-4 text-[#555]">{booking.checkOut}</td>
                 <td className="py-4">
-                  <span className="rounded-full bg-[#1F5E4B]/10 px-3 py-1 text-xs font-semibold text-[#1F5E4B]">
-                    {booking.status}
-                  </span>
+                    <StatusBadge status={booking.status} />
                 </td>
                 <td className="py-4">
                   <Link
