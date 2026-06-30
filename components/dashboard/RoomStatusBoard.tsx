@@ -8,7 +8,9 @@
  * ============================================================================
  */
 
-import { hotelRooms } from "@/lib/mock-data/rooms";
+import { roomService } from "@/lib/services/room.service";
+
+
 
 const statusColors = {
   Available: "bg-green-500",
@@ -17,6 +19,7 @@ const statusColors = {
   Reserved: "bg-blue-500",
   Maintenance: "bg-gray-500",
 };
+const rooms = roomService.getAllRooms();
 
 export function RoomStatusBoard() {
   return (
@@ -30,7 +33,7 @@ export function RoomStatusBoard() {
       </h3>
 
       <div className="mt-6 space-y-4">
-        {hotelRooms.map((room) => (
+        {rooms.map((room) => (
           <div
             key={room.number}
             className="flex items-center justify-between rounded-xl bg-[#F8F7F3] p-4"
