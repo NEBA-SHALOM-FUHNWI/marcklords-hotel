@@ -70,7 +70,7 @@ export default async function RoomDetailsPage({ params }: PageProps) {
       <RoomAmenities amenities={room.amenities} />
       <RoomGallery images={room.gallery} />
       <RoomReviews rating={room.rating} reviews={room.reviews} />
-      <RelatedRooms currentRoomSlug={room.slug} />
+      <RelatedRooms currentSlug={room.slug} />
       
     </MainLayout>
   );
