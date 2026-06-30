@@ -14,7 +14,8 @@ export type RoomStatus =
   | "Occupied"
   | "Cleaning"
   | "Reserved"
-  | "Maintenance";
+  | "Maintenance"
+  | "Dirty";
 
 export type HousekeepingStatus =
   | "Clean"

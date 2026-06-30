@@ -92,7 +92,7 @@ export const hotelRooms: HotelRoom[] = [
     type: "Executive Suite",
     price: 85000,
     capacity: 3,
-    status: "Occupied",
+    status: "Dirty",
     housekeepingStatus: "Dirty",
     smoking: false,
     active: true,

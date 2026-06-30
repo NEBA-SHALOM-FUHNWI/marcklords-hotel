@@ -18,6 +18,7 @@ const statusColors = {
   Cleaning: "bg-yellow-500",
   Reserved: "bg-blue-500",
   Maintenance: "bg-gray-500",
+  Dirty: "bg-orange-500",
 };
 const rooms = roomService.getAllRooms();
 

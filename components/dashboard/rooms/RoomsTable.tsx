@@ -10,10 +10,22 @@
 
 import { roomService } from "@/lib/services/room.service";
 import { StatusBadge } from "@/components/dashboard/shared/StatusBadge";
+import { HotelRoom } from "@/types";
+import { EmptyState } from "@/components/dashboard/shared/EmptyState";
 
+type RoomsTableProps = {
+  rooms?: HotelRoom[];
+};
+export function RoomsTable({ rooms }: RoomsTableProps) {
 
-export function RoomsTable() {
-  const rooms = roomService.getAllRooms();
+  if (!rooms || rooms.length === 0) {
+    return (
+      <EmptyState
+        title="No rooms found"
+        description="Try changing your search or filters to find matching rooms."
+      />
+    );
+  }
 
   return (
     <div className="mt-8 rounded-[2rem] bg-white p-6 shadow-sm">

@@ -18,6 +18,7 @@ import {
   Settings,
   Users,
   UtensilsCrossed,
+  ClipboardCheck
 } from "lucide-react";
 
 import { Logo } from "@/components/hotel/Logo";
@@ -26,6 +27,7 @@ const sidebarItems = [
   { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
   { name: "Bookings", href: "/dashboard/bookings", icon: CalendarCheck },
   { name: "Rooms", href: "/dashboard/rooms", icon: BedDouble },
+  { name: "Housekeeping", href: "/dashboard/housekeeping", icon: ClipboardCheck },
   { name: "Guests", href: "/dashboard/guests", icon: Users },
   { name: "Restaurant", href: "/dashboard/restaurant", icon: UtensilsCrossed },
   { name: "Gallery", href: "/dashboard/gallery", icon: GalleryHorizontalEnd },

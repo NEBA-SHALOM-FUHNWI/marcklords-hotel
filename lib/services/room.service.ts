@@ -42,4 +42,16 @@ export const roomService = {
   getRoomByNumber(number: string): HotelRoom | undefined {
     return hotelRooms.find((room) => room.number === number);
   },
+
+  getHousekeepingRooms(): HotelRoom[] {
+  return hotelRooms.filter(
+    (room) =>
+      room.status === "Dirty" ||
+      room.status === "Cleaning" ||
+      room.status === "Maintenance" ||
+      room.housekeepingStatus === "Dirty" ||
+      room.housekeepingStatus === "In Progress" ||
+      room.housekeepingStatus === "Out of Service"
+  );
+},
 };
