@@ -20,7 +20,8 @@ import {
   UtensilsCrossed,
   ClipboardCheck,
   ReceiptText,
-  LogOut
+  LogOut,
+  BarChart3
 } from "lucide-react";
 
 import { Logo } from "@/components/hotel/Logo";
@@ -36,6 +37,7 @@ const sidebarItems = [
   { name: "Billing", href: "/dashboard/billing", icon: ReceiptText },
   { name: "Gallery", href: "/dashboard/gallery", icon: GalleryHorizontalEnd },
   { name: "Website", href: "/", icon: Home },
+  { name: "Reports", href: "/dashboard/reports", icon: BarChart3 },
   { name: "Settings", href: "/dashboard/settings", icon: Settings },
 ];
 
