@@ -1,0 +1,96 @@
+import {
+  LayoutDashboard,
+  CalendarDays,
+  Users,
+  BedDouble,
+  ClipboardCheck,
+  UtensilsCrossed,
+  ReceiptText,
+  LogOut,
+  BarChart3,
+  Briefcase,
+  Settings2,
+  Bell,
+  FileClock,
+} from "lucide-react";
+
+export const navigationConfig = [
+  {
+    title: "Dashboard",
+    href: "/dashboard",
+    icon: LayoutDashboard,
+    feature: null,
+  },
+  {
+    title: "Bookings",
+    href: "/dashboard/bookings",
+    icon: CalendarDays,
+    feature: "bookings",
+  },
+  {
+    title: "Guests",
+    href: "/dashboard/guests",
+    icon: Users,
+    feature: "guests",
+  },
+  {
+    title: "Rooms",
+    href: "/dashboard/rooms",
+    icon: BedDouble,
+    feature: "rooms",
+  },
+  {
+    title: "Housekeeping",
+    href: "/dashboard/housekeeping",
+    icon: ClipboardCheck,
+    feature: "housekeeping",
+  },
+  {
+    title: "Restaurant",
+    href: "/dashboard/restaurant",
+    icon: UtensilsCrossed,
+    feature: "restaurant",
+  },
+  {
+    title: "Billing",
+    href: "/dashboard/billing",
+    icon: ReceiptText,
+    feature: "billing",
+  },
+  {
+    title: "Check-Out",
+    href: "/dashboard/check-out",
+    icon: LogOut,
+    feature: "billing",
+  },
+  {
+    title: "Management Center",
+    href: "/dashboard/reports",
+    icon: BarChart3,
+    feature: "managementCenter",
+  },
+  {
+    title: "Notifications",
+    href: "/dashboard/notifications",
+    icon: Bell,
+    feature: "notificationsCenter",
+  },
+  {
+  title: "Audit Logs",
+  href: "/dashboard/audit",
+  icon: FileClock,
+  feature: "auditCenter",
+},
+  {
+    title: "Workforce",
+    href: "/dashboard/workforce",
+    icon: Briefcase,
+    feature: "workforce",
+  },
+  {
+    title: "Configuration",
+    href: "/dashboard/configuration",
+    icon: Settings2,
+    feature: "configurationCenter",
+  },
+];

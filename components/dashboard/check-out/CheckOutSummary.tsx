@@ -16,6 +16,7 @@ import { billingService } from "@/lib/services/billing.service";
 import { guestLedgers } from "@/lib/mock-data/billing";
 import { Booking } from "@/types";
 import { useState } from "react";
+import { eventService } from "@/core/events/event.service";
 
 type CheckOutSummaryProps = {
   booking: Booking;
@@ -69,7 +70,15 @@ export function CheckOutSummary({ booking }: CheckOutSummaryProps) {
 
       {canCheckOut ? (
         <button
-  onClick={() => setCompleted(true)}
+  onClick={() => {
+    eventService.emit("GUEST_CHECKED_OUT", {
+      bookingId: booking.id,
+      guest: booking.guest,
+      roomNumber: booking.roomNumber,
+    });
+
+    setCompleted(true);
+  }}
   className="mt-6 rounded-full bg-[#1F5E4B] px-6 py-3 font-semibold text-white hover:bg-[#063D2E]"
 >
   Complete Check-Out
